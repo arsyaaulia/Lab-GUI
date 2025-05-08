@@ -9,29 +9,22 @@ public class Sidebar extends JPanel {
         setBackground(new Color(40, 40, 50));
         setPreferredSize(new Dimension(200, 300));
         
-        String[] buttons = {"Home", "Characters", "Episodes", "Settings"};
+        String[] buttonTexts = {"Home", "Characters", "Episodes", "Settings"};
 
         // Dimension buttonSize = new Dimension(150, 40);
         
-        add(Box.createVerticalStrut(10)); 
-        for(int i = 0; i < buttons.length; i++){
-
-            JButton btn = new JButton(buttons[i]);
-            btn.setBorder(BorderFactory.createEmptyBorder());
-            btn.setForeground(Color.WHITE);
-            btn.setBackground(Color.decode("#18161d"));
-            btn.setOpaque(true);
-            btn.setPreferredSize(new Dimension(150, 40));
+        add(Box.createVerticalStrut(10));
+        for (int i = 0; i < buttonTexts.length; i++) {
+            setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
+            String text = buttonTexts[i];
+            customButton btn = customButton.primaryButton(text); // Gunakan primaryButton
             btn.setAlignmentX(Component.CENTER_ALIGNMENT);
-            
+            btn.setMaximumSize(new Dimension(180, 40));
             add(btn);
 
-
-            if (i < buttons.length - 1){
-                add(Box.createVerticalStrut(10)); 
+            if (i < buttonTexts.length - 1) {
+                add(Box.createVerticalStrut(10));
             }
         }
-        
-       
     }
 }

@@ -12,7 +12,7 @@ public class Navbar extends JPanel {
         
         
         // Judul
-        JLabel title = new JLabel("Frieren: After The End");
+        JLabel title = new JLabel("Halo halo bandung");
         title.setForeground(Color.WHITE);
         title.setFont(new Font("Arial", Font.BOLD, 20));
         title.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
@@ -20,28 +20,28 @@ public class Navbar extends JPanel {
         JPanel right = new JPanel(new FlowLayout(FlowLayout.RIGHT,10,10));
         right.setOpaque(false); //atur transparansinya, tidak transparan
         
-        Dimension buttonSize = new Dimension(120,30);
+        // Dimension buttonSize = new Dimension(120,30);
 
         // Button Join Discord
-        JButton discord = new JButton("Join Discord");
-        discord.setBorder(BorderFactory.createEmptyBorder());
-        discord.setForeground(Color.BLACK);
-        discord.setBackground(Color.decode("#6be4fa"));
-        discord.setOpaque(true);
-        discord.setPreferredSize(buttonSize);
+        // JButton discord = new JButton("Join Discord");
+        // discord.setBorder(BorderFactory.createEmptyBorder());
+        // discord.setForeground(Color.BLACK);
+        // discord.setBackground(Color.decode("#6be4fa"));
+        // discord.setOpaque(true);
+        // discord.setPreferredSize(buttonSize);
 
         //Button Kofi
-        JButton kofi = new JButton("Buy Us a Ko-Fi");
-        kofi.setBorder(BorderFactory.createEmptyBorder());
-        kofi.setForeground(Color.BLACK);
-        kofi.setBackground(Color.decode("#fb9dc9"));
-        kofi.setOpaque(true);
-        kofi.setPreferredSize(buttonSize);
+        // JButton kofi = new JButton("Buy Us a Ko-Fi");
+        // kofi.setBorder(BorderFactory.createEmptyBorder());
+        // kofi.setForeground(Color.BLACK);
+        // kofi.setBackground(Color.decode("#fb9dc9"));
+        // kofi.setOpaque(true);
+        // kofi.setPreferredSize(buttonSize);
         
         // Panggil object diatas tadi
         
-        right.add(discord);
-        right.add(kofi);
+        right.add(customButton.blueButton("Join Discord"));
+        right.add(customButton.pinkButton("Buy Us a Coffee"));
 
         add(title, BorderLayout.WEST); 
         add(right, BorderLayout.EAST);
