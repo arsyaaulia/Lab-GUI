@@ -7,13 +7,13 @@ public class CharacterCard extends JPanel {
     private CharacterImageCard imageCard;
     private CharacterInfoCard infoCard;
 
-    public CharacterCard(String name) {
+    public CharacterCard(String name, int imageWidth, int imageHeight) {
         setLayout(new BorderLayout());
         setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
-        setBackground(Color.WHITE); // Latar belakang untuk kartu
-        setPreferredSize(new Dimension(250, 280)); // Ukuran preferred untuk kartu
+        setBackground(Color.WHITE);
+        setPreferredSize(new Dimension(imageWidth, imageHeight + 30)); // Tinggi disesuaikan untuk info
 
-        imageCard = new CharacterImageCard();
+        imageCard = new CharacterImageCard(imageWidth, imageHeight);
         add(imageCard, BorderLayout.CENTER);
 
         infoCard = new CharacterInfoCard(name);

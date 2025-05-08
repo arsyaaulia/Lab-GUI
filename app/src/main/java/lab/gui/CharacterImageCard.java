@@ -6,26 +6,29 @@ import java.awt.*;
 public class CharacterImageCard extends JPanel {
     private JLabel imageLabel;
 
-    public CharacterImageCard() {
+    public CharacterImageCard(int width, int height) {
         setLayout(new BorderLayout());
         setBackground(Color.LIGHT_GRAY); // Warna placeholder untuk gambar
         imageLabel = new JLabel("", SwingConstants.CENTER);
         add(imageLabel, BorderLayout.CENTER);
-        setPreferredSize(new Dimension(300, 300)); // Ukuran preferred untuk area gambar
+        setPreferredSize(new Dimension(width, height));
     }
 
     public void setImage(ImageIcon icon) {
         if (icon != null) {
-            Image scaledImage = icon.getImage().getScaledInstance(
-                    getWidth(), -1, Image.SCALE_SMOOTH);
-            if (scaledImage.getHeight(null) > getHeight()) {
-                scaledImage = icon.getImage().getScaledInstance(
-                        -1, getHeight(), Image.SCALE_SMOOTH);
-            }
+            // Penskalaan gambar dilakukan di sini agar CharacterImageCard bertanggung jawab atas ukurannya
+            Image scaledImage = getScaledImage(icon.getImage(), getWidth(), getHeight());
             imageLabel.setIcon(new ImageIcon(scaledImage));
         } else {
             imageLabel.setIcon(null);
-            imageLabel.setText("");
+            imageLabel.setText("No Image");
         }
+    }
+
+    private Image getScaledImage(Image srcImg, int w, int h) {
+        if (w <= 0 || h <= 0 || srcImg == null) {
+            return null;
+        }
+        return srcImg.getScaledInstance(w, h, Image.SCALE_SMOOTH);
     }
 }

@@ -7,11 +7,11 @@ public class CharacterInfoCard extends JPanel {
     private JLabel nameLabel;
 
     public CharacterInfoCard(String name) {
-        setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5)); // Atur tata letak untuk nama
-        setBackground(Color.WHITE); // Latar belakang untuk info
+        setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        setBackground(Color.WHITE);
         nameLabel = new JLabel(name, SwingConstants.CENTER);
         add(nameLabel);
-        setPreferredSize(new Dimension(150, 30)); // Ukuran preferred untuk area nama
+        // Tidak perlu setPreferredSize di sini, biarkan layout manager yang mengatur
     }
 
     public void setName(String name) {
