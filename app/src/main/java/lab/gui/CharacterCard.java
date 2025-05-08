@@ -2,29 +2,39 @@ package lab.gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 public class CharacterCard extends JPanel {
-    private CharacterImageCard imageCard;
-    private CharacterInfoCard infoCard;
-
-    public CharacterCard(String name, int imageWidth, int imageHeight) {
+    public CharacterCard(String name, String imagePath) {
         setLayout(new BorderLayout());
-        setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
-        setBackground(Color.WHITE);
-        setPreferredSize(new Dimension(imageWidth, imageHeight + 30)); // Tinggi disesuaikan untuk info
 
-        imageCard = new CharacterImageCard(imageWidth, imageHeight);
-        add(imageCard, BorderLayout.CENTER);
+        JLabel imageLabel = new JLabel();
+        imageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
-        infoCard = new CharacterInfoCard(name);
-        add(infoCard, BorderLayout.SOUTH);
-    }
+        BufferedImage image = null;
 
-    public void setImage(ImageIcon icon) {
-        imageCard.setImage(icon);
-    }
+        try {
+            image = ImageIO.read(getClass().getResourceAsStream(imagePath));
+        } catch (IOException | IllegalArgumentException e) {
+            // Gambar gagal dimuat, biarkan image tetap null
+        }
 
-    public void setName(String name) {
-        infoCard.setName(name);
+        if (image == null) {
+            // Gambar null → buat gambar putih polos ukuran 150x150
+            image = new BufferedImage(150, 150, BufferedImage.TYPE_INT_RGB);
+            Graphics2D g2 = image.createGraphics();
+            g2.setColor(Color.WHITE); // warna putih
+            g2.fillRect(0, 0, 150, 150);
+            g2.dispose();
+        }
+
+        imageLabel.setIcon(new ImageIcon(image));
+        JLabel nameLabel = new JLabel(name, SwingConstants.CENTER);
+
+        add(imageLabel, BorderLayout.CENTER);
+        add(nameLabel, BorderLayout.SOUTH);
+        setBorder(BorderFactory.createLineBorder(Color.GRAY));
     }
 }
