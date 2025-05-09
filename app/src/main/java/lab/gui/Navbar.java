@@ -12,7 +12,7 @@ public class Navbar extends JPanel {
         
         
         // Judul
-        JLabel title = new JLabel("Halo halo bandung");
+        JLabel title = new JLabel("Bread Barbershop");
         title.setForeground(Color.WHITE);
         title.setFont(new Font("Arial", Font.BOLD, 20));
         title.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));

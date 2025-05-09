@@ -16,12 +16,17 @@ public class App extends JFrame {
         // Sidebar dan Konten Karakter
         // Sidebar sidebar = new Sidebar();
         CharacterGridPanel characterGridPanel = new CharacterGridPanel();
+        
         add(characterGridPanel, BorderLayout.CENTER); // Langsung tambahkan CharacterGridPanel
 
         setVisible(true);
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new App());
+        SwingUtilities.invokeLater(() -> {
+            System.out.println("Menjalankan App...");
+            new App();
+        });
     }
+    
 }

@@ -2,39 +2,31 @@ package lab.gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 
 public class CharacterCard extends JPanel {
-    public CharacterCard(String name, String imagePath) {
+    private JLabel imageLabel;
+    private JLabel nameLabel;
+
+    public CharacterCard(String name, ImageIcon icon) {
         setLayout(new BorderLayout());
+        setPreferredSize(new Dimension(200, 200));
+        setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        setBackground(Color.WHITE);
 
-        JLabel imageLabel = new JLabel();
-        imageLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        imageLabel = new JLabel();
+        imageLabel.setHorizontalAlignment(JLabel.CENTER);
 
-        BufferedImage image = null;
-
-        try {
-            image = ImageIO.read(getClass().getResourceAsStream(imagePath));
-        } catch (IOException | IllegalArgumentException e) {
-            // Gambar gagal dimuat, biarkan image tetap null
+        if (icon != null) {
+            imageLabel.setIcon(icon);
+        } else {
+            imageLabel.setPreferredSize(new Dimension(150, 150));
+            imageLabel.setBackground(Color.WHITE);
+            imageLabel.setOpaque(true);
         }
 
-        if (image == null) {
-            // Gambar null → buat gambar putih polos ukuran 150x150
-            image = new BufferedImage(150, 150, BufferedImage.TYPE_INT_RGB);
-            Graphics2D g2 = image.createGraphics();
-            g2.setColor(Color.WHITE); // warna putih
-            g2.fillRect(0, 0, 150, 150);
-            g2.dispose();
-        }
-
-        imageLabel.setIcon(new ImageIcon(image));
-        JLabel nameLabel = new JLabel(name, SwingConstants.CENTER);
+        nameLabel = new JLabel(name, JLabel.CENTER);
 
         add(imageLabel, BorderLayout.CENTER);
         add(nameLabel, BorderLayout.SOUTH);
-        setBorder(BorderFactory.createLineBorder(Color.GRAY));
     }
 }

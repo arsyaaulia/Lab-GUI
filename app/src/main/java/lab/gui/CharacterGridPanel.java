@@ -9,7 +9,8 @@ public class CharacterGridPanel extends JScrollPane {
     public CharacterGridPanel() {
         content = new JPanel(new GridLayout(0, 4, 15, 15));
         content.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        content.setBackground(new Color(240, 240, 240));
+        
+        content.setBackground(Color.BLACK);
         setViewportView(content);
 
         setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_AS_NEEDED);
