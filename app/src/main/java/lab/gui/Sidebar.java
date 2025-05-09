@@ -9,7 +9,7 @@ public class Sidebar extends JPanel {
         setBackground(new Color(40, 40, 50));
         setPreferredSize(new Dimension(200, 300));
         
-        String[] buttonTexts = {"Home", "Characters", "Episodes", "Settings", "Town"};
+        String[] buttonTexts = {"Home", "Characters", "Episodes", "Settings", "Town", "Dhiva", "Thania", "PakKasmir"};
 
         // Dimension buttonSize = new Dimension(150, 40);
         
