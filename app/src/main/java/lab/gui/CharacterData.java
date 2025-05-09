@@ -28,9 +28,9 @@ public class CharacterData {
         list.add(new CharacterData("Macaron", "/Macaron.png"));
         list.add(new CharacterData("Bilk", "/Bilk.png"));
         list.add(new CharacterData("Cheese", "/Cheese.png"));
-        list.add(new CharacterData("Wilk", "/Wilk.jpeg"));
-        list.add(new CharacterData("Choco", "/Choco.jpeg"));
-        list.add(new CharacterData("Vanilla Ice Cream", "/Ice cream.jpeg"));
+        list.add(new CharacterData("Sausage", "/Sausage.jpeg"));
+        list.add(new CharacterData("Anomali", "/Gambar4.png"));
+        list.add(new CharacterData("Anomali", "/Gambar3.png"));
         
 
 

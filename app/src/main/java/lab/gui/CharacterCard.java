@@ -27,6 +27,7 @@ public class CharacterCard extends JPanel {
         nameLabel = new JLabel(name, JLabel.CENTER);
 
         add(imageLabel, BorderLayout.CENTER);
+        setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
         add(nameLabel, BorderLayout.SOUTH);
     }
 }
