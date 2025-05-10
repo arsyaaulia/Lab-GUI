@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Navbar extends JPanel {
+    private JPanel contentPanel;
+
     public Navbar() {
         //Aturan desainnya
         setLayout(new BorderLayout());
@@ -20,6 +22,8 @@ public class Navbar extends JPanel {
         JPanel right = new JPanel(new FlowLayout(FlowLayout.RIGHT,10,10));
         right.setOpaque(false); //atur transparansinya, tidak transparan
         
+        
+
         // Dimension buttonSize = new Dimension(120,30);
 
         // Button Join Discord
@@ -46,5 +50,12 @@ public class Navbar extends JPanel {
         add(title, BorderLayout.WEST); 
         add(right, BorderLayout.EAST);
         
+    }
+
+    public void showContent(JPanel panel) {
+        contentPanel.removeAll();
+        contentPanel.add(panel, BorderLayout.CENTER);
+        contentPanel.revalidate();
+        contentPanel.repaint();
     }
 }
