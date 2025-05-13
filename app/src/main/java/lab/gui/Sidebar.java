@@ -37,7 +37,7 @@ public class Sidebar extends JPanel {
                         break;
                     case "All Characters":
                         // newPanel = new CharacterGridPanel();
-                        app.showContent(new CharacterGridPanel());
+                        app.showContent(new AllChar());
                         break;
                     case "Beyond Journey's End":
                     // System.out.println("epi");

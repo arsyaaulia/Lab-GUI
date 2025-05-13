@@ -13,7 +13,7 @@ public class AuratheGuillotine extends JPanel {  // Changed to JPanel
         CardsContainer cardsContainer = new CardsContainer(items, 4);
 
         // 2. Create header at bottom
-        Header Header = new Header("Aura the Guillotine's Character");
+        Header Header = new Header("Aura the Guillotine");
 
         // Add components
         add(new JScrollPane(cardsContainer), BorderLayout.CENTER);

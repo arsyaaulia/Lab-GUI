@@ -4,14 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-public class BeyondJourneysEnd extends ComingSoon {
+public class BeyondJourneysEnd extends JPanel {
     public BeyondJourneysEnd(){
         setLayout(new BorderLayout());
         
         List<CardData.CardItem> items = CardData.getBeyondJourneysEnd();
         CardsContainer cardsContainer = new CardsContainer(items, 4);
 
-        Header header = new Header("Character of Beyond Journey's End");
+        Header header = new Header("Beyond Journey's End");
 
         add(new JScrollPane(cardsContainer), BorderLayout.CENTER);
         add(header, BorderLayout.NORTH);
