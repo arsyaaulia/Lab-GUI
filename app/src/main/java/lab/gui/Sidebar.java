@@ -14,7 +14,7 @@ public class Sidebar extends JPanel {
         setBackground(new Color(40, 40, 50));
         setPreferredSize(new Dimension(200, 300));
         
-        String[] buttonTexts = {"Home", "Characters", "Episodes", "Settings", "Town", "Song", "Merchandise", "Credits"};
+        String[] buttonTexts = {"Home", "All Characters", "Beyond Journey's End", "Aura the Guillotine", "Travels to Äußerst", "First-Class Mage Exam 1", "First-Class Mage Exam 2", "First-Class Mage Exam 3"};
 
         // Dimension buttonSize = new Dimension(150, 40);
         
@@ -29,16 +29,52 @@ public class Sidebar extends JPanel {
             
             btn.addActionListener(e -> {
                 // JPanel newPanel = null;
+
                 switch (text) {
-                    case "Characters":
+                    case "Home":
+                        // newPanel = new CharacterGridPanel();
+                        app.showContent(new HomePanel());
+                        break;
+                    case "All Characters":
                         // newPanel = new CharacterGridPanel();
                         app.showContent(new CharacterGridPanel());
                         break;
-                    case "Episodes":
+                    case "Beyond Journey's End":
                     // System.out.println("epi");
                         // newPanel = new EpisodePanel();
-                        app.showContent(new EpisodePanel());
+                        app.showContent(new BeyondJourneysEnd());
                         break;
+
+                    case "Aura the Guillotine":
+                    // System.out.println("epi");
+                        // newPanel = new EpisodePanel();
+                        app.showContent(new AuratheGuillotine());
+                        break;
+
+                    case "Travels to Äußerst":
+                    // System.out.println("epi");
+                        // newPanel = new EpisodePanel();
+                        app.showContent(new TravelstoAuberst());
+                        break;
+                    
+                    case "First-Class Mage Exam 1":
+                    // System.out.println("epi");
+                        // newPanel = new EpisodePanel();
+                        app.showContent(new FirstClassMageExam1());
+                        break;
+
+                    case "First-Class Mage Exam 2":
+                    // System.out.println("epi");
+                        // newPanel = new EpisodePanel();
+                        app.showContent(new FirstClassMageExam2());
+                        break;
+
+                    case "First-Class Mage Exam 3":
+                    // System.out.println("epi");
+                        // newPanel = new EpisodePanel();
+                        app.showContent(new FirstClassMageExam3());
+                        break;
+                    
                     default:
                         JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(this),
                             text + " Panel is not ready!");

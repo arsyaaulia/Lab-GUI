@@ -7,7 +7,7 @@ public class App extends JFrame {
     private JPanel mainContent;
 
     public App() {
-        setTitle("Tugas OOP");
+        setTitle("Lab GUI");
         setSize(1200, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -27,7 +27,7 @@ public class App extends JFrame {
         // add(characterGridPanel, BorderLayout.CENTER); // Langsung tambahkan CharacterGridPanel
 
         //tampilkan halaman awal
-        showContent(new CharacterGridPanel());
+        showContent(new AllChar());
 
         setVisible(true);
     }
