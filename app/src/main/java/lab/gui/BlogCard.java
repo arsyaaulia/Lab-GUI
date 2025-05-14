@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BlogCard extends JPanel {
-    
     public BlogCard(String title, String content) {
+
         setLayout(new BorderLayout(10, 10));
         setBackground(Color.WHITE);
         

@@ -44,6 +44,7 @@ public class Navbar extends JPanel {
         
         // Panggil object diatas tadi
         
+        //panggil customButton
         right.add(customButton.blueButton("Join Discord"));
         right.add(customButton.pinkButton("Buy Us a Coffee"));
 

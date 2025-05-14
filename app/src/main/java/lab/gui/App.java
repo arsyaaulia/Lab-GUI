@@ -33,6 +33,7 @@ public class App extends JFrame {
     }
 
     // Ganti container bagian isi saja, navbar dan sidebar tetap stay
+    
     public void showContent(JComponent panel){
         mainContent.removeAll();
         mainContent.add(panel, BorderLayout.CENTER);

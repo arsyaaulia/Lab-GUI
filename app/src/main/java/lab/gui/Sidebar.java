@@ -14,7 +14,7 @@ public class Sidebar extends JPanel {
         setBackground(new Color(40, 40, 50));
         setPreferredSize(new Dimension(200, 300));
         
-        String[] buttonTexts = {"Home", "All Characters", "Beyond Journey's End", "Aura the Guillotine", "Travels to Äußerst", "First-Class Mage Exam 1", "First-Class Mage Exam 2", "First-Class Mage Exam 3"};
+        String[] buttonTexts = {"Home", "All Characters", "Beyond Journey's End", "Aura the Guillotine", "Travels to Äußerst", "First-Class Mage Exam 1", "First-Class Mage Exam 2", "First-Class Mage Exam 3", "Credit"};
 
         // Dimension buttonSize = new Dimension(150, 40);
         
@@ -29,7 +29,6 @@ public class Sidebar extends JPanel {
             
             btn.addActionListener(e -> {
                 // JPanel newPanel = null;
-
                 switch (text) {
                     case "Home":
                         // newPanel = new CharacterGridPanel();
@@ -73,6 +72,12 @@ public class Sidebar extends JPanel {
                     // System.out.println("epi");
                         // newPanel = new EpisodePanel();
                         app.showContent(new FirstClassMageExam3());
+                        break;
+                    
+                    case "Credit":
+                    // System.out.println("epi");
+                        // newPanel = new EpisodePanel();
+                        app.showContent(new credit());
                         break;
                     
                     default:
